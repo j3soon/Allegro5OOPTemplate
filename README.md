@@ -40,7 +40,7 @@ Follow the steps [here](https://github.com/j3soon/Allegro5Template/blob/master/d
 
 ## Better Coding Environment & Basic Debugging Techniques
 
-Video Link (Not recorded yet...)
+[Video Link](https://youtu.be/TirBdMwT6JA)
 
 - [Auto indenting, formatting](https://j3soon.com/notes/2018/04/13/auto-indenting,-formatting-your-code.html)
 - Auto complete (Intellisense) & Show docs

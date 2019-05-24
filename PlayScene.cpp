@@ -64,6 +64,7 @@ void PlayScene::Initialize() {
 	ConstructUI();
 	imgTarget = new Engine::Image("play/target.png", 0, 0);
 	imgTarget->Visible = false;
+	preview = nullptr;
 	UIGroup->AddNewObject(imgTarget);
 	AudioHelper::PlayBGM("play.ogg");
 }
