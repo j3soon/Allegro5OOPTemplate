@@ -6,7 +6,7 @@ We will use Allegro 5 OOP in mini-project 2 and final project.
 
 [iLMS Course Site](https://lms.nthu.edu.tw/course/38000)
 
-[Allegro 5 Template for I2P(1)_2018_SR]
+[Allegro 5 Template for I2P(1)_2018_SR](https://github.com/j3soon/Allegro5Template/blob/master/README.md)
 
 ## Installation
 
