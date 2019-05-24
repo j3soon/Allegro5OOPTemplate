@@ -45,7 +45,7 @@ Follow the steps [here](https://github.com/j3soon/Allegro5Template/blob/master/d
 - [Auto indenting, formatting](https://j3soon.com/notes/2018/04/13/auto-indenting,-formatting-your-code.html)
 - Auto complete (Intellisense) & Show docs
 - [Code navigation](https://docs.microsoft.com/en-us/visualstudio/ide/navigating-code)
-  - Search, Full Search
+  - Search, Full Search (Goto File, Goto Everything)
   - Navigation bar
   - Go To Definition
   - Go To Implementation
