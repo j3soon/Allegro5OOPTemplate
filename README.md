@@ -38,6 +38,35 @@ Follow the steps [here](https://github.com/j3soon/Allegro5Template/blob/master/d
 
   [Examples](https://github.com/liballeg/allegro5/tree/master/examples)
 
+## Better Coding Environment & Basic Debugging Techniques
+
+Video Link (Not recorded yet...)
+
+- [Auto indenting, formatting](https://j3soon.com/notes/2018/04/13/auto-indenting,-formatting-your-code.html)
+- Auto complete (Intellisense) & Show docs
+- [Code navigation](https://docs.microsoft.com/en-us/visualstudio/ide/navigating-code)
+  - Search, Full Search
+  - Navigation bar
+  - Go To Definition
+  - Go To Implementation
+  - Find all references
+  - Call Hierarchy
+- Plugins (Resharper, ...)
+- Logging (`printf`, `std::cout`, `FILE`, `std::ofstream`, ...)
+- [Debugger](https://docs.microsoft.com/en-us/visualstudio/debugger/debugger-feature-tour) or [gdb](https://www.gnu.org/software/gdb/)
+  - [Breakpoints (Step into, Step over, Step out)](https://tutorials.visualstudio.com/vs-get-started/debugging)
+  - Variables (Auto, Local, Watch)
+  - Call Stack
+- Code base maintain
+  - Version Control (Git, ...)
+    - [Git SCM](https://git-scm.com/)
+    - [GitHub Desktop](https://desktop.github.com/)
+    - [Sourcetree](https://www.sourcetreeapp.com/)
+    - command line
+  - [include-what-you-use (IWYU)](https://github.com/include-what-you-use/include-what-you-use)
+- Advanced methods
+  - [Profiling](https://docs.microsoft.com/en-us/visualstudio/profiling/profiling-feature-tour), ...
+
 ## FAQ
 
 ### Mini Project 2 & Final
