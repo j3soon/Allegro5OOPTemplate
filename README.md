@@ -42,7 +42,7 @@ Follow the steps [here](https://github.com/j3soon/Allegro5Template/blob/master/d
 
 ### Mini Project 2 & Final
 
-- **Mini Project 2**: Game crashes when starting game.
+- **Mini Project 2**: Game crashes when clicking `Stage 1`.
 
   Yes the game will crash if you didn't finish `TODO 3`, after finishing it, the game should work fine.
 
@@ -99,6 +99,14 @@ Follow the steps [here](https://github.com/j3soon/Allegro5Template/blob/master/d
 
 ### Installation on Windows
 
+- **Mini Project 2**: Cannot compile.
+
+  For Code::Blocks you should create a project following the tutorial above, and set the project settings to allow C++11.
+
+  ![](docs/imgs/faq-cb-cpp11.png)
+
+  The settings are almost the same in other IDEs.
+
 - File `allegro-5.0.10-monolith-mt-debug.dll` is missing in Code::Blocks
 
   Find the file `allegro/bin/allegro-5.0.10-monolith-mt-debug.dll` located inside the unzipped library folder.
@@ -122,6 +130,24 @@ Follow the steps [here](https://github.com/j3soon/Allegro5Template/blob/master/d
   For Code::Blocks you should open the `*.cbp` file.
 
   For Dev-C++ you should open the `*.dev` file. If all files disappear, use `Project > Add To Project...` and select all files.
+
+- On Code::Blocks Release mode: `The Application was Unable to Start Correctly (0xc000007b)`
+
+  ![](docs/imgs/faq-cb-0xc000007b.png)
+
+  You should copy both `allegro_monolith-5.2.dll` and `allegro-5.2.dll` to your `/Release` folder.
+
+  Or you should copy both `allegro_monolith-debug-5.2.dll` and `allegro-5.2.dll` to your `/Debug` folder.
+
+- I want to hide the console window.
+
+  For Code::Blocks:
+
+  Set the build target type to `GUI application`.
+
+  ![](docs/imgs/faq-cb-gui.png)
+
+  For other IDEs there are also such settings.
 
 ### Installation on Mac OS
 
