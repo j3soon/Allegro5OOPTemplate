@@ -12,7 +12,7 @@ ALLEGRO_SAMPLE_ID AudioHelper::PlayAudio(const std::string& audio) {
 	ALLEGRO_SAMPLE* sample = Engine::Resources::GetInstance().GetSample(audio).get();
 	ALLEGRO_SAMPLE_ID id;
 	if (!al_play_sample(sample, SFXVolume, 0.0, 1.0, ALLEGRO_PLAYMODE_ONCE, &id))
-		Engine::LOG(Engine::INFO) << "failed to play audio (once)";
+		Engine::LOG(Engine::VERBOSE) << "failed to play audio (once)";
 	else
 		Engine::LOG(Engine::VERBOSE) << "played audio (once)";
 	return id;
