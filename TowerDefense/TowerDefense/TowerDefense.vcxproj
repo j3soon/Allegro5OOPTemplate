@@ -201,6 +201,7 @@
     <ClInclude Include="WinScene.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram.cd" />
     <None Include="EngineClassDiagram.cd" />
     <None Include="EngineClassDiagramMinimized.cd" />
     <None Include="GameClassDiagram.cd" />

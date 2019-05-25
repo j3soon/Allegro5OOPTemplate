@@ -155,5 +155,8 @@
     <None Include="EngineClassDiagramMinimized.cd">
       <Filter>Diagrams</Filter>
     </None>
+    <None Include="ClassDiagram.cd">
+      <Filter>Diagrams</Filter>
+    </None>
   </ItemGroup>
 </Project>
