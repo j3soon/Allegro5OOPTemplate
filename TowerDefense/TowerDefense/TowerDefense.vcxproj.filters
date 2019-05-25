@@ -137,8 +137,23 @@
     <Filter Include="Engine">
       <UniqueIdentifier>{d4c1e0d8-c414-494b-aac5-1c834220b24a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Diagrams">
+      <UniqueIdentifier>{83b210e9-a39b-4b3f-beb0-b6fa9093ead8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="EngineClassDiagram.cd">
+      <Filter>Diagrams</Filter>
+    </None>
+    <None Include="GameClassDiagram.cd">
+      <Filter>Diagrams</Filter>
+    </None>
+    <None Include="GameClassDiagramMinimized.cd">
+      <Filter>Diagrams</Filter>
+    </None>
+    <None Include="EngineClassDiagramMinimized.cd">
+      <Filter>Diagrams</Filter>
+    </None>
   </ItemGroup>
 </Project>

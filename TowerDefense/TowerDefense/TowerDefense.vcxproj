@@ -201,6 +201,10 @@
     <ClInclude Include="WinScene.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="EngineClassDiagram.cd" />
+    <None Include="EngineClassDiagramMinimized.cd" />
+    <None Include="GameClassDiagram.cd" />
+    <None Include="GameClassDiagramMinimized.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

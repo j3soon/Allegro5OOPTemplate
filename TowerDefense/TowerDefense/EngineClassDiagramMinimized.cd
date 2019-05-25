@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access">
+  <Class Name="Engine::GameEngine" Collapsed="true">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AGIAAAAAQCAAAACAgAJAAMAgDAUEBCAACRAiQAAEIiQ=</HashCode>
+      <FileName>GameEngine.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Engine::IScene" Collapsed="true">
+    <Position X="1.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAACAwAAAAAAAAAAAAAAAAAAAAAkAAAAAAA=</HashCode>
+      <FileName>IScene.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Engine::IObject" Collapsed="true">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAEAAABAggAgAAAAAAAEAAAAEAAIAAAgIAAAAAA=</HashCode>
+      <FileName>IObject.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Engine::Resources" Collapsed="true">
+    <Position X="11.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAQAoAQAAAAAAAAAAAAABSgACAAACAAgAAAQAEA=</HashCode>
+      <FileName>Resources.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Engine::IControl" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAACAAAAAgAAAAAAAABIAAQAAIAggAAACAAA=</HashCode>
+      <FileName>IControl.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Engine::Image" Collapsed="true">
+    <Position X="4.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgIAAAAAAAAAAAAgABAAAAAACAAAAAA=</HashCode>
+      <FileName>Image.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Engine::ImageButton" Collapsed="true">
+    <Position X="4.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAABAIAAEAAAAAgAEBBAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>ImageButton.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Engine::Label" Collapsed="true">
+    <Position X="7" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAEAAAAgAAAAAAAAAAAAAAAAAAAAAAiBAAAgA=</HashCode>
+      <FileName>Label.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Engine::Sprite" Collapsed="true">
+    <Position X="7" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAQAAAoAAAAAAAAAAAAAAAAAQAAAAAAIEAAA=</HashCode>
+      <FileName>Sprite.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Engine::Group" Collapsed="true">
+    <Position X="1.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQwEAOIEAACAAgBCBAAEAABAARIAQSAAIAAgQCBCAAQ=</HashCode>
+      <FileName>Group.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="Engine::Collider" Collapsed="true">
+    <Position X="9.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAACQAAAAAAAAAAAAAAAAAAAAAAEQAAAAAAAAAAA=</HashCode>
+      <FileName>Collider.hpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

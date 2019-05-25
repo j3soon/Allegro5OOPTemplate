@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access">
+  <Class Name="Engine::GameEngine">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AGIAAAAAQCAAAACAgAJAAMAgDAUEBCAACRAiQAAEIiQ=</HashCode>
+      <FileName>GameEngine.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Engine::IScene">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAACAwAAAAAAAAAAAAAAAAAAAAAkAAAAAAA=</HashCode>
+      <FileName>IScene.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Engine::IObject">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAEAAABAggAgAAAAAAAEAAAAEAAIAAAgIAAAAAA=</HashCode>
+      <FileName>IObject.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Engine::Resources">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAQAoAQAAAAAAAAAAAAABSgACAAACAAgAAAQAEA=</HashCode>
+      <FileName>Resources.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Engine::IControl">
+    <Position X="9.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAACAAAAAgAAAAAAAABIAAQAAIAggAAACAAA=</HashCode>
+      <FileName>IControl.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Engine::Image">
+    <Position X="11.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgIAAAAAAAAAAAAgABAAAAAACAAAAAA=</HashCode>
+      <FileName>Image.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Engine::ImageButton">
+    <Position X="14" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAABAIAAEAAAAAgAEBBAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>ImageButton.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Engine::Label">
+    <Position X="11.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAEAAAAgAAAAAAAAAAAAAAAAAAAAAAiBAAAgA=</HashCode>
+      <FileName>Label.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Engine::Sprite">
+    <Position X="14" Y="0.5" Width="1.5" />
+    <InheritanceLine Type="Engine::Image" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="12.75" Y="4.5" />
+        <Point X="12.75" Y="4.031" />
+        <Point X="14.75" Y="4.031" />
+        <Point X="14.75" Y="2.887" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAQAAAoAAAAAAAAAAAAAAAAAQAAAAAAIEAAA=</HashCode>
+      <FileName>Sprite.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Engine::Group">
+    <Position X="7.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQwEAOIEAACAAgBCBAAEAABAARIAQSAAIAAgQCBCAAQ=</HashCode>
+      <FileName>Group.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Engine::Allegro5Exception">
+    <Position X="16.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>Allegro5Exception.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Engine::LOG">
+    <Position X="18.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAmAgIAAAACAAAAAgAABEAAAAgBAAAAAAAA=</HashCode>
+      <FileName>LOG.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="Engine::Collider">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAACQAAAAAAAAAAAAAAAAAAAAAAEQAAAAAAAAAAA=</HashCode>
+      <FileName>Collider.hpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Engine::Point">
+    <Position X="16.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAEAAAAQAACAAAAgAAAABgAAEAAAA=</HashCode>
+      <FileName>Point.hpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Enum Name="Engine::LogType">
+    <Position X="18.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABgAAAAAAAAAAAgAAAAQAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>LOG.hpp</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

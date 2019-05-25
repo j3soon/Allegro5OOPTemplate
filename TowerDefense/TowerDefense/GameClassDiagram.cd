@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="WinScene">
+    <Position X="25.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAIAAAQAAAAAAAAAIAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WinScene.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Turret">
+    <Position X="12.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQBAAAAEAAIA4ABEAAAACgAAAAIAAABCAQAAAAAAAA=</HashCode>
+      <FileName>Turret.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TankEnemy">
+    <Position X="16.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQEACAAgAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TankEnemy.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StageSelectScene">
+    <Position X="25.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAACAAAEAAABAAAAAAAIAAEA=</HashCode>
+      <FileName>StageSelectScene.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoldierEnemy">
+    <Position X="19" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SoldierEnemy.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayScene">
+    <Position X="23.5" Y="0.75" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="PlayScene::TileType" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>PlayScene.hpp</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AIQABQEEAAAiExCCAAIIQAAIKBIkBAAAIAHBADKDkBA=</HashCode>
+      <FileName>PlayScene.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlaneEnemy">
+    <Position X="21.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>PlaneEnemy.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MissileTurret">
+    <Position X="14.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQIAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>MissileTurret.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MissileBullet">
+    <Position X="6.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAIAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>MissileBullet.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MachineGunTurret">
+    <Position X="10" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAACAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>MachineGunTurret.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LoseScene">
+    <Position X="25.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAABEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LoseScene.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LaserTurret">
+    <Position X="12.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAAAAAAAABAAAAAAAAEAA=</HashCode>
+      <FileName>LaserTurret.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LaserBullet">
+    <Position X="4.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>LaserBullet.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FireBullet">
+    <Position X="2" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAE=</HashCode>
+      <FileName>FireBullet.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ExplosionEffect">
+    <Position X="9.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAQAAAAAAAAIAgAAAAABAAAAABAAAAAAAA=</HashCode>
+      <FileName>ExplosionEffect.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Enemy">
+    <Position X="19" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQEAgAAAAAAAgAEAAICAAgAAAAAAwAAAABAAAAAEAE=</HashCode>
+      <FileName>Enemy.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DirtyEffect">
+    <Position X="7.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAgAAAAAAAgAAAAABAAAAAAQAAAAAAA=</HashCode>
+      <FileName>DirtyEffect.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bullet">
+    <Position X="4.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAgABAAAAAACgAAAAAAQAAAAAAAAAQAAE=</HashCode>
+      <FileName>Bullet.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AudioHelper">
+    <Position X="28" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAABQQAAAAAUAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AudioHelper.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Plane">
+    <Position X="21.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAABAAAAASAgAgEAAAAAgCgAAACAAAAAJAAAAAQAA=</HashCode>
+      <FileName>Plane.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Slider">
+    <Position X="30.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAQIAABgAAgAAEIAAAAAAABAAACAAIAAAAAACBgA=</HashCode>
+      <FileName>Slider.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
