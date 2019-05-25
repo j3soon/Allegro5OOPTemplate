@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="AudioHelper.cpp" />
+    <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="DirtyEffect.cpp" />
+    <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="ExplosionEffect.cpp" />
+    <ClCompile Include="FireBullet.cpp" />
+    <ClCompile Include="LaserBullet.cpp" />
+    <ClCompile Include="LaserTurret.cpp" />
+    <ClCompile Include="LoseScene.cpp" />
+    <ClCompile Include="MachineGunTurret.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="MissileBullet.cpp" />
+    <ClCompile Include="MissileTurret.cpp" />
+    <ClCompile Include="Plane.cpp" />
+    <ClCompile Include="PlaneEnemy.cpp" />
+    <ClCompile Include="PlayScene.cpp" />
+    <ClCompile Include="Slider.cpp" />
+    <ClCompile Include="SoldierEnemy.cpp" />
+    <ClCompile Include="StageSelectScene.cpp" />
+    <ClCompile Include="TankEnemy.cpp" />
+    <ClCompile Include="Turret.cpp" />
+    <ClCompile Include="TurretButton.cpp" />
+    <ClCompile Include="WinScene.cpp" />
+    <ClCompile Include="Allegro5Exception.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Collider.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Group.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="IControl.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Image.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageButton.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="IObject.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="IScene.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Label.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="LOG.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Point.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Resources.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AudioHelper.hpp" />
+    <ClInclude Include="Bullet.hpp" />
+    <ClInclude Include="DirtyEffect.hpp" />
+    <ClInclude Include="Enemy.hpp" />
+    <ClInclude Include="ExplosionEffect.hpp" />
+    <ClInclude Include="FireBullet.hpp" />
+    <ClInclude Include="LaserBullet.hpp" />
+    <ClInclude Include="LaserTurret.hpp" />
+    <ClInclude Include="LoseScene.hpp" />
+    <ClInclude Include="MachineGunTurret.hpp" />
+    <ClInclude Include="MissileBullet.hpp" />
+    <ClInclude Include="MissileTurret.hpp" />
+    <ClInclude Include="Plane.hpp" />
+    <ClInclude Include="PlaneEnemy.hpp" />
+    <ClInclude Include="PlayScene.hpp" />
+    <ClInclude Include="Slider.hpp" />
+    <ClInclude Include="SoldierEnemy.hpp" />
+    <ClInclude Include="StageSelectScene.hpp" />
+    <ClInclude Include="TankEnemy.hpp" />
+    <ClInclude Include="Turret.hpp" />
+    <ClInclude Include="TurretButton.hpp" />
+    <ClInclude Include="WinScene.hpp" />
+    <ClInclude Include="Allegro5Exception.hpp">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Collider.hpp">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine.hpp">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Group.hpp">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="IControl.hpp">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Image.hpp">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageButton.hpp">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="IObject.hpp">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="IScene.hpp">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Label.hpp">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="LOG.hpp">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Point.hpp">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Resources.hpp">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.hpp">
+      <Filter>Engine</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{d4c1e0d8-c414-494b-aac5-1c834220b24a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>
