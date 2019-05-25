@@ -71,6 +71,10 @@ Follow the steps [here](https://github.com/j3soon/Allegro5Template/blob/master/d
 
 ### Mini Project 2 & Final
 
+- **Mini Project 2**: Can we use Code::Blocks or other IDEs to compile the project?
+
+  Yes. Although the video shows it in Visual Studio, but using Code::Blocks, XCode, Dev-Cpp or other IDEs are also OK. You can even compile it directly through `g++` or by Makefile.
+
 - **Mini Project 2**: Game crashes when clicking `Stage 1`.
 
   Yes the game will crash if you didn't finish `TODO 3`, after finishing it, the game should work fine.
