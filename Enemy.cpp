@@ -82,7 +82,8 @@ void Enemy::Update(float deltaTime) {
 	while (remainSpeed != 0) {
 		if (path.empty()) {
 			// Reach end point.
-			getPlayScene()->EnemyGroup->RemoveObject(objectIterator);
+			// Kill enemy and damage player.
+			Hit(hp);
 			getPlayScene()->Hit();
 			return;
 		}
