@@ -134,6 +134,8 @@ Follow the steps [here](https://github.com/j3soon/Allegro5Template/blob/master/d
 
 - **Mini Project 2**: Cannot compile.
 
+  For Visual Studio you should change `Debug x64` to `Debug x86`.
+
   For Code::Blocks you should create a project following the tutorial above, and set the project settings to allow C++11.
 
   ![](docs/imgs/faq-cb-cpp11.png)
