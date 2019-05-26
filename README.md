@@ -71,6 +71,14 @@ Follow the steps [here](https://github.com/j3soon/Allegro5Template/blob/master/d
 
 ### Mini Project 2 & Final
 
+- **Mini Project 2**: My mouse cursor seems to have a offset between the screen coordinate and the window coordinate.
+
+  That's because your screen resolution is too low. Try lower the resolution or use hotkeys instead.
+
+- **Mini Project 2**: There seems to be multiple cheat codes.
+
+  Yes. That's because it's a bug in TAs code... You can use any of them to demo and get the score.
+
 - **Mini Project 2**: Can we use Code::Blocks or other IDEs to compile the project?
 
   Yes. Although the video shows it in Visual Studio, but using Code::Blocks, XCode, Dev-Cpp or other IDEs are also OK. You can even compile it directly through `g++` or by Makefile.
