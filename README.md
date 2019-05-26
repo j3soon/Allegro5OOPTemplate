@@ -153,6 +153,8 @@ Follow the steps [here](https://github.com/j3soon/Allegro5Template/blob/master/d
   ![](docs/imgs/faq-cb-cpp11.png)
 
   The settings are almost the same in other IDEs.
+  
+  For `'abs(float&)' is ambiguous` you can change 4 `abs` to `fabs`.
 
 - File `allegro-5.0.10-monolith-mt-debug.dll` is missing in Code::Blocks
 
