@@ -184,6 +184,19 @@ Follow the steps [here](https://github.com/j3soon/Allegro5Template/blob/master/d
 
 ### Installation on Mac OS
 
+- **Mini Project 2**: Compile error: `bitmap`...
+
+  In `GameEngine.cpp` comment out the load icon part:
+  
+  ```cpp
+  // Load and set window icon.
+  if (icon) {
+    // static std::shared_ptr<ALLEGRO_BITMAP> iconReference = Resources::GetInstance().GetBitmap(icon);
+    // al_set_display_icon(display, iconReference.get());
+    // LOG(INFO) << "Loaded window icon from: " << icon;
+  }
+  ```
+
 - **Mini Project 2**: Compile error: `static_assert`...
 
   In `GameEngine.hpp` add `#include <string>`:
