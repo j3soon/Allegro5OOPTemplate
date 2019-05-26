@@ -132,9 +132,17 @@ Follow the steps [here](https://github.com/j3soon/Allegro5Template/blob/master/d
 
 ### Installation on Windows
 
-- **Mini Project 2**: Cannot compile.
+- **Mini Project 2**: Cannot compile on Dev-C++. (`unwind`...)
+
+  `Project > Project Options... > Parameters > Linker` add one more line below:
+  
+  `-Wl,--allow-multiple-definition`.
+
+- **Mini Project 2**: Cannot compile on Visual Studio. (`unresolved external symbol`...)
 
   For Visual Studio you should change `Debug x64` to `Debug x86`.
+
+- **Mini Project 2**: Cannot compile on Code::Blocks.
 
   For Code::Blocks you should create a project following the tutorial above, and set the project settings to allow C++11.
 
