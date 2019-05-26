@@ -184,6 +184,19 @@ Follow the steps [here](https://github.com/j3soon/Allegro5Template/blob/master/d
 
 ### Installation on Mac OS
 
+- **Mini Project 2**: Compile error: `static_assert`...
+
+  In `GameEngine.hpp` add `#include <string>`:
+  
+  ```cpp
+  #include <allegro5/allegro.h>
+  #include <string>
+  #include <unordered_map>
+  #include <string>
+
+  #include "Point.hpp"
+  ```
+
 - **Mini Project 2**: Compile error in `LOG.hpp`, `LOG.cpp`
 
   Rename all `DEBUG` to `TEST` in the following parts:
