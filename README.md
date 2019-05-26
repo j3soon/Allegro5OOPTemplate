@@ -140,7 +140,7 @@ Follow the steps [here](https://github.com/j3soon/Allegro5Template/blob/master/d
 
 - **Mini Project 2**: Cannot compile on Visual Studio. (`unresolved external symbol`...)
 
-  Download the project [here](https://github.com/j3soon/Allegro5OOPTemplate/archive/master.zip) and find the `TowerDefense.sln` file and double-click it.
+  Download the project [here](https://github.com/j3soon/Allegro5OOPTemplate/archive/master.zip) and find the `TowerDefense/TowerDefense.sln` file and double-click it.
 
   For Visual Studio you should change `Debug x64` to `Debug x86`.
 
