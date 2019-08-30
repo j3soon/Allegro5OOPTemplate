@@ -2,6 +2,8 @@
 
 We will use Allegro 5 OOP in mini-project 2 and final project.
 
+![](docs/imgs/preview.png)
+
 ## Administrative
 
 [iLMS Course Site](https://lms.nthu.edu.tw/course/38000)
