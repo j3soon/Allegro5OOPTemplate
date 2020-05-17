@@ -1,4 +1,4 @@
-# Allegro 5 Template for I2P(2)_2019_SR
+# Allegro 5 Template for I2P(2)_2020_SR
 
 We will use Allegro 5 OOP in mini-project 2 and final project.
 
@@ -8,7 +8,7 @@ We will use Allegro 5 OOP in mini-project 2 and final project.
 
 [iLMS Course Site](https://lms.nthu.edu.tw/course/38000)
 
-[Allegro 5 Template for I2P(1)_2018_SR](https://github.com/j3soon/Allegro5Template/blob/master/README.md)
+[Allegro 5 Template for I2P(1)_2019_SR](https://github.com/j3soon/Allegro5Template/blob/master/README.md)
 
 ## Installation
 
@@ -34,7 +34,7 @@ Follow the steps [here](https://github.com/j3soon/Allegro5Template/blob/master/d
 
   [Allegro 5.0 reference manual](https://www.allegro.cc/manual/5/)
 
-- GitHub repo
+- GitHub repo of Allegro5
 
   [Source Code](https://github.com/liballeg/allegro5)
 
@@ -71,25 +71,17 @@ Follow the steps [here](https://github.com/j3soon/Allegro5Template/blob/master/d
 
 ## FAQ
 
-### Mini Project 2 & Final
+### Mini Project 2
 
-- **Mini Project 2**: My mouse cursor seems to have a offset between the screen coordinate and the window coordinate.
+- My mouse cursor seems to have a offset between the screen coordinate and the window coordinate.
 
-  That's because your screen resolution is too low. Try lower the resolution or use hotkeys instead.
+  That's because your screen resolution is too low. Try increase the screen resolution or use hotkeys instead.
 
-- **Mini Project 2**: There seems to be multiple cheat codes.
-
-  Yes. That's because it's a bug in TAs code... You can use any of them to demo and get the score.
-
-- **Mini Project 2**: Can we use Code::Blocks or other IDEs to compile the project?
+- Can we use Code::Blocks or other IDEs to compile the project?
 
   Yes. Although the video shows it in Visual Studio, but using Code::Blocks, XCode, Dev-Cpp or other IDEs are also OK. You can even compile it directly through `g++` or by Makefile.
 
-- **Mini Project 2**: Game crashes when clicking `Stage 1`.
-
-  Yes the game will crash if you didn't finish `TODO 3`, after finishing it, the game should work fine.
-
-- **Mini Project 2**: Game crashes when winning.
+- Game crashes when winning.
 
   Yes the game will crash if you didn't finish `TODO 5`, after finishing it, winning should work fine.
 
@@ -97,12 +89,11 @@ Follow the steps [here](https://github.com/j3soon/Allegro5Template/blob/master/d
 
   It can be used like videos after putting the library under your project folder.
 
-- If you play multiple BGMs or sound effects at the same time, the `al_play_sample` could fail.
+- If you want to load MP3 audio, you can try out streaming as mentioned [here](https://github.com/liballeg/allegro_wiki/wiki/Allegro-Vivace).
 
-  You can either:
+- If you play multiple BGMs or sound effects at the same time, the `al_play_sample` could fail and the sound would not come out.
 
-  1. Set `RESERVED_SAMPLES` to a higher value.
-  2. Don't abort if `al_play_sample` fails.
+  You can set `reserveSamples` to a higher value.
 
 - Unable to find resources when open the executable file located in `...\bin\` directly.
 
@@ -142,28 +133,38 @@ Follow the steps [here](https://github.com/j3soon/Allegro5Template/blob/master/d
 
 ### Installation on Windows
 
-- **Mini Project 2**: Cannot compile on Dev-C++. (`unwind`...)
+- Cannot compile on Dev-C++. (`unwind`...)
 
   `Project > Project Options... > Parameters > Linker` add one more line below:
-  
+
   `-Wl,--allow-multiple-definition`.
 
-- **Mini Project 2**: Cannot compile on Visual Studio. (`unresolved external symbol`...)
+- Cannot compile on Visual Studio. (`unresolved external symbol`...)
 
-  Remember to check `Support C++ Desktop` when installing.
+  - Remember to check `Support C++ Desktop` when installing.
 
-  Download the project [here](https://github.com/j3soon/Allegro5OOPTemplate/archive/master.zip) and find the `TowerDefense/TowerDefense.sln` file and double-click it.
+  - Download the project [here](https://github.com/j3soon/Allegro5OOPTemplate/archive/master.zip) and find the `TowerDefense/TowerDefense.sln` file and double-click it.
 
-  For Visual Studio you should change `Debug x64` to `Debug x86`.
+  - For Visual Studio you may try out different configurations such as `Debug x64`, `Debug x86`, `Release x64`, `Release x86`.
 
-- **Mini Project 2**: Cannot compile on Code::Blocks.
+  - When setting the configuration of Allegro5 plugins, make sure to set in `All Configurations` and `All Platforms`.
+
+    ![](docs/imgs/visual-studio-all.png)
+
+  - When not using Visual Studio 2017 (Using 2019 or other versions), choose any downloaded `Windows SDK Version` and any `Platform Toolset`. (Make sure the options you chose are installed in your computer)
+
+    ![](docs/imgs/windows-sdk-version.png)
+
+    ![](docs/imgs/platform-toolset.png)
+
+- Cannot compile on Code::Blocks.
 
   For Code::Blocks you should create a project following the tutorial above, and set the project settings to allow C++11.
 
   ![](docs/imgs/faq-cb-cpp11.png)
 
   The settings are almost the same in other IDEs.
-  
+
   For `'abs(float&)' is ambiguous` you can change 4 `abs` to `fabs`.
 
 - File `allegro-5.0.10-monolith-mt-debug.dll` is missing in Code::Blocks
@@ -183,6 +184,12 @@ Follow the steps [here](https://github.com/j3soon/Allegro5Template/blob/master/d
 - Cannot find resource files
 
   You should drag your resource files into your project folder.
+
+- Redefinition of ...
+
+  You need to keep only one `main` function in one project, for example you may have both `task_1_ans.c` and `task_2_ans.c` in your project. You should only keep one.
+
+  Or you might accidentally edit the Allgero5 library header, re-installing the library may help.
 
 - When reopen the project, all settings are gone.
 
@@ -210,60 +217,7 @@ Follow the steps [here](https://github.com/j3soon/Allegro5Template/blob/master/d
 
 ### Installation on Mac OS
 
-- **Mini Project 2**: Compile error: `bitmap`...
-
-  In `GameEngine.cpp` comment out the load icon part:
-  
-  ```cpp
-  // Load and set window icon.
-  if (icon) {
-    // static std::shared_ptr<ALLEGRO_BITMAP> iconReference = Resources::GetInstance().GetBitmap(icon);
-    // al_set_display_icon(display, iconReference.get());
-    // LOG(INFO) << "Loaded window icon from: " << icon;
-  }
-  ```
-
-- **Mini Project 2**: Compile error: `static_assert`...
-
-  In `GameEngine.hpp` add `#include <string>`:
-  
-  ```cpp
-  #include <allegro5/allegro.h>
-  #include <string>
-  #include <unordered_map>
-  #include <string>
-
-  #include "Point.hpp"
-  ```
-
-- **Mini Project 2**: Compile error in `LOG.hpp`, `LOG.cpp`
-
-  Rename all `DEBUG` to `TEST` in the following parts:
-
-  - `LOG.hpp`:
-    ```cpp
-      enum LogType {
-        VERBOSE,
-        DEBUG, // Rename this to TEST.
-        INFO,
-        WARN,
-        ERROR
-      };
-      explicit LOG(LogType type = DEBUG); // Rename this to TEST.
-    ```
-  - `LOG.cpp`:
-    ```cpp
-    const char* LOG::getLabel(LogType type) {
-      switch (type) {
-      case VERBOSE: return "VERBOSE";
-      case DEBUG:   return "DEBUG"; // Rename the first DEBUG to TEST.
-      case INFO:    return "INFO";
-      case WARN:    return "WARN";
-      case ERROR:   return "ERROR";
-      }
-      return "UNKNOWN";
-    }
-    ```
+- There are OpenGL related bugs in newer version of XCode make sure to use XCode versions prior or equal to 10.3.
 
 - Command not found - brew
 
