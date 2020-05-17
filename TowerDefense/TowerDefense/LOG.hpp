@@ -7,7 +7,7 @@ namespace Engine {
 	// Log types that will be formatted in front of the line.
 	enum LogType {
 		VERBOSE,
-		DEBUG,
+		DEBUGGING,
 		INFO,
 		WARN,
 		ERROR
@@ -48,8 +48,8 @@ namespace Engine {
 		/// <summary>
 		/// Start a log chain with certain type.
 		/// </summary>
-		/// <param name="type">The type of this log chain, default is DEBUG.</param>
-		explicit LOG(LogType type = DEBUG);
+		/// <param name="type">The type of this log chain, default is DEBUGGING.</param>
+		explicit LOG(LogType type = DEBUGGING);
 		/// <summary>
 		/// Add new line and close file.
 		/// </summary>

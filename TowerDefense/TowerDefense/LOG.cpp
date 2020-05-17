@@ -34,7 +34,7 @@ namespace Engine {
 	const char* LOG::getLabel(LogType type) {
 		switch (type) {
 		case VERBOSE: return "VERBOSE";
-		case DEBUG:   return "DEBUG";
+		case DEBUGGING:   return "DEBUGGING";
 		case INFO:    return "INFO";
 		case WARN:    return "WARN";
 		case ERROR:   return "ERROR";

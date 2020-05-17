@@ -1,162 +1,250 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="AudioHelper.cpp" />
-    <ClCompile Include="Bullet.cpp" />
-    <ClCompile Include="DirtyEffect.cpp" />
-    <ClCompile Include="Enemy.cpp" />
-    <ClCompile Include="ExplosionEffect.cpp" />
-    <ClCompile Include="FireBullet.cpp" />
-    <ClCompile Include="LaserBullet.cpp" />
-    <ClCompile Include="LaserTurret.cpp" />
-    <ClCompile Include="LoseScene.cpp" />
-    <ClCompile Include="MachineGunTurret.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="MissileBullet.cpp" />
-    <ClCompile Include="MissileTurret.cpp" />
-    <ClCompile Include="Plane.cpp" />
-    <ClCompile Include="PlaneEnemy.cpp" />
-    <ClCompile Include="PlayScene.cpp" />
-    <ClCompile Include="Slider.cpp" />
-    <ClCompile Include="SoldierEnemy.cpp" />
-    <ClCompile Include="StageSelectScene.cpp" />
-    <ClCompile Include="TankEnemy.cpp" />
-    <ClCompile Include="Turret.cpp" />
-    <ClCompile Include="TurretButton.cpp" />
-    <ClCompile Include="WinScene.cpp" />
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StageSelectScene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TankEnemy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Turret.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TurretButton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WinScene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="Allegro5Exception.cpp">
-      <Filter>Engine</Filter>
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AudioHelper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Collider.cpp">
-      <Filter>Engine</Filter>
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DirtyEffect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ExplosionEffect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FireBullet.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GameEngine.cpp">
-      <Filter>Engine</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Group.cpp">
-      <Filter>Engine</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="IControl.cpp">
-      <Filter>Engine</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Image.cpp">
-      <Filter>Engine</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ImageButton.cpp">
-      <Filter>Engine</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="IObject.cpp">
-      <Filter>Engine</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="IScene.cpp">
-      <Filter>Engine</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Label.cpp">
-      <Filter>Engine</Filter>
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LaserBullet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LaserTurret.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="LOG.cpp">
-      <Filter>Engine</Filter>
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LoseScene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MachineGunTurret.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MissileBullet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MissileTurret.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Plane.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PlaneEnemy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayScene.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Point.cpp">
-      <Filter>Engine</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Resources.cpp">
-      <Filter>Engine</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Sprite.cpp">
-      <Filter>Engine</Filter>
+    <ClCompile Include="Slider.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SoldierEnemy.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AudioHelper.hpp" />
-    <ClInclude Include="Bullet.hpp" />
-    <ClInclude Include="DirtyEffect.hpp" />
-    <ClInclude Include="Enemy.hpp" />
-    <ClInclude Include="ExplosionEffect.hpp" />
-    <ClInclude Include="FireBullet.hpp" />
-    <ClInclude Include="LaserBullet.hpp" />
-    <ClInclude Include="LaserTurret.hpp" />
-    <ClInclude Include="LoseScene.hpp" />
-    <ClInclude Include="MachineGunTurret.hpp" />
-    <ClInclude Include="MissileBullet.hpp" />
-    <ClInclude Include="MissileTurret.hpp" />
-    <ClInclude Include="Plane.hpp" />
-    <ClInclude Include="PlaneEnemy.hpp" />
-    <ClInclude Include="PlayScene.hpp" />
-    <ClInclude Include="Slider.hpp" />
-    <ClInclude Include="SoldierEnemy.hpp" />
-    <ClInclude Include="StageSelectScene.hpp" />
-    <ClInclude Include="TankEnemy.hpp" />
-    <ClInclude Include="Turret.hpp" />
-    <ClInclude Include="TurretButton.hpp" />
-    <ClInclude Include="WinScene.hpp" />
+    <ClInclude Include="Sprite.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StageSelectScene.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TankEnemy.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Turret.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TurretButton.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WinScene.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="Allegro5Exception.hpp">
-      <Filter>Engine</Filter>
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioHelper.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.hpp">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Collider.hpp">
-      <Filter>Engine</Filter>
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DirtyEffect.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ExplosionEffect.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FireBullet.hpp">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GameEngine.hpp">
-      <Filter>Engine</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Group.hpp">
-      <Filter>Engine</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="IControl.hpp">
-      <Filter>Engine</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Image.hpp">
-      <Filter>Engine</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ImageButton.hpp">
-      <Filter>Engine</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="IObject.hpp">
-      <Filter>Engine</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="IScene.hpp">
-      <Filter>Engine</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Label.hpp">
-      <Filter>Engine</Filter>
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LaserBullet.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LaserTurret.hpp">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="LOG.hpp">
-      <Filter>Engine</Filter>
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LoseScene.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MachineGunTurret.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MissileBullet.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MissileTurret.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Plane.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PlaneEnemy.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayScene.hpp">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Point.hpp">
-      <Filter>Engine</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Resources.hpp">
-      <Filter>Engine</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Sprite.hpp">
-      <Filter>Engine</Filter>
+    <ClInclude Include="Slider.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SoldierEnemy.hpp">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="Engine">
-      <UniqueIdentifier>{d4c1e0d8-c414-494b-aac5-1c834220b24a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Diagrams">
-      <UniqueIdentifier>{83b210e9-a39b-4b3f-beb0-b6fa9093ead8}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="EngineClassDiagram.cd" />
+    <None Include="EngineClassDiagramMinimized.cd" />
+    <None Include="GameClassDiagram.cd" />
+    <None Include="GameClassDiagramMinimized.cd" />
     <None Include="packages.config" />
-    <None Include="EngineClassDiagram.cd">
-      <Filter>Diagrams</Filter>
-    </None>
-    <None Include="GameClassDiagram.cd">
-      <Filter>Diagrams</Filter>
-    </None>
-    <None Include="GameClassDiagramMinimized.cd">
-      <Filter>Diagrams</Filter>
-    </None>
-    <None Include="EngineClassDiagramMinimized.cd">
-      <Filter>Diagrams</Filter>
-    </None>
-    <None Include="ClassDiagram.cd">
-      <Filter>Diagrams</Filter>
-    </None>
   </ItemGroup>
 </Project>

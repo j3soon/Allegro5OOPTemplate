@@ -36,13 +36,15 @@ void StageSelectScene::Initialize() {
     sliderSFX->SetOnValueChangedCallback(std::bind(&StageSelectScene::SFXSlideOnValueChanged, this, std::placeholders::_1));
     AddNewControlObject(sliderSFX);
     AddNewObject(new Engine::Label("SFX: ", "pirulen.ttf", 28, 40 + halfW - 60 - 95, halfH + 50, 255, 255, 255, 255, 0.5, 0.5));
-    // Not a safe way, however we only free while change scene, so it's fine.
-    bgmInstance = al_create_sample_instance(Engine::Resources::GetInstance().GetSample("select.ogg").get());
-    al_set_sample_instance_playmode(bgmInstance, ALLEGRO_PLAYMODE_LOOP);
-    al_attach_sample_instance_to_mixer(bgmInstance, al_get_default_mixer());
-    al_play_sample_instance(bgmInstance);
+    // Not safe if release resource while playing, however we only free while change scene, so it's fine.
+	bgmInstance = AudioHelper::PlaySample("select.ogg", true, AudioHelper::BGMVolume);
     sliderBGM->SetValue(AudioHelper::BGMVolume);
     sliderSFX->SetValue(AudioHelper::SFXVolume);
+}
+void StageSelectScene::Terminate() {
+	AudioHelper::StopSample(bgmInstance);
+	bgmInstance = std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE>();
+	IScene::Terminate();
 }
 void StageSelectScene::PlayOnClick(int stage) {
     PlayScene* scene = dynamic_cast<PlayScene*>(Engine::GameEngine::GetInstance().GetScene("play"));
@@ -50,7 +52,7 @@ void StageSelectScene::PlayOnClick(int stage) {
     Engine::GameEngine::GetInstance().ChangeScene("play");
 }
 void StageSelectScene::BGMSlideOnValueChanged(float value) {
-    al_set_sample_instance_gain(bgmInstance, value);
+    AudioHelper::ChangeSampleVolume(bgmInstance, value);
     AudioHelper::BGMVolume = value;
 }
 void StageSelectScene::SFXSlideOnValueChanged(float value) {

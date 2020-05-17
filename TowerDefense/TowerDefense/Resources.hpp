@@ -4,8 +4,8 @@
 #include <allegro5/allegro_audio.h>
 #include <allegro5/allegro_font.h>
 #include <memory>
-#include <unordered_map>
 #include <string>
+#include <unordered_map>
 
 
 namespace Engine {
@@ -36,6 +36,8 @@ namespace Engine {
 		std::unordered_map<std::string, std::shared_ptr<ALLEGRO_FONT>> fonts;
 		// All samples are stored in hash table for easy access and management.
 		std::unordered_map<std::string, std::shared_ptr<ALLEGRO_SAMPLE>> samples;
+		// All (sample instance, sample) pairs are stored in hash table for easy access and management.
+		std::unordered_map<std::string, std::pair<std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE>, std::shared_ptr<ALLEGRO_SAMPLE>>> sample_instance_pairs;
 		/// <summary>
 		/// Private constructor since this class is a Singleton.
 		/// </summary>
@@ -84,6 +86,12 @@ namespace Engine {
 		/// <param name="name">The filename of the audio. (Including extension)</param>
 		/// <returns>The smart pointer of the sample.</returns>
 		std::shared_ptr<ALLEGRO_SAMPLE> GetSample(std::string name);
+		/// <summary>
+		/// Get sample instance pointer by name. The file should be put under "resources/audios".
+		/// </summary>
+		/// <param name="name">The filename of the audio. (Including extension)</param>
+		/// <returns>The smart pointer of the sample instance.</returns>
+		std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> GetSampleInstance(std::string name);
 		/// <summary>
 		/// Typical function to retrieve Singleton instance and supports lazy initialization.
 		/// </summary>

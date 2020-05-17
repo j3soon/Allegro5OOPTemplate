@@ -1,11 +1,12 @@
 #include <allegro5/allegro.h>
+#include <algorithm>
 #include <cmath>
 #include <fstream>
 #include <functional>
+#include <vector>
 #include <queue>
 #include <string>
 #include <memory>
-#include <string>
 
 #include "AudioHelper.hpp"
 #include "DirtyEffect.hpp"
@@ -21,16 +22,19 @@
 #include "Plane.hpp"
 #include "PlaneEnemy.hpp"
 #include "PlayScene.hpp"
+#include "Resources.hpp"
 #include "SoldierEnemy.hpp"
 #include "Sprite.hpp"
 #include "TankEnemy.hpp"
 #include "Turret.hpp"
 #include "TurretButton.hpp"
+#include "LOG.hpp"
 
 bool PlayScene::DebugMode = false;
 const std::vector<Engine::Point> PlayScene::directions = { Engine::Point(-1, 0), Engine::Point(0, -1), Engine::Point(1, 0), Engine::Point(0, 1) };
 const int PlayScene::MapWidth = 20, PlayScene::MapHeight = 13;
 const int PlayScene::BlockSize = 64;
+const float PlayScene::DangerTime = 7.61;
 const Engine::Point PlayScene::SpawnGridPoint = Engine::Point(-1, 0);
 const Engine::Point PlayScene::EndGridPoint = Engine::Point(MapWidth, MapHeight - 1);
 const std::vector<int> PlayScene::code = { ALLEGRO_KEY_UP, ALLEGRO_KEY_UP, ALLEGRO_KEY_DOWN, ALLEGRO_KEY_DOWN,
@@ -45,6 +49,7 @@ void PlayScene::Initialize() {
 	mapState.clear();
 	keyStrokes.clear();
 	ticks = 0;
+	deathCountDown = -1;
 	lives = 10;
 	money = 150;
 	SpeedMult = 1;
@@ -66,11 +71,63 @@ void PlayScene::Initialize() {
 	imgTarget->Visible = false;
 	preview = nullptr;
 	UIGroup->AddNewObject(imgTarget);
-	AudioHelper::PlayBGM("play.ogg");
+	// Preload Lose Scene
+	deathBGMInstance = Engine::Resources::GetInstance().GetSampleInstance("astronomia.ogg");
+	Engine::Resources::GetInstance().GetBitmap("lose/benjamin-happy.png");
+	// Start BGM.
+	bgmId = AudioHelper::PlayBGM("play.ogg");
+}
+void PlayScene::Terminate() {
+	AudioHelper::StopBGM(bgmId);
+	AudioHelper::StopSample(deathBGMInstance);
+	deathBGMInstance = std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE>();
+	IScene::Terminate();
 }
 void PlayScene::Update(float deltaTime) {
 	// If we use deltaTime directly, then we might have Bullet-through-paper problem.
 	// Reference: Bullet-Through-Paper
+	if (SpeedMult == 0)
+		deathCountDown = -1;
+	else if (deathCountDown != -1)
+		SpeedMult = 1;
+	// Calculate danger zone.
+	std::vector<float> reachEndTimes;
+	for (auto& it : EnemyGroup->GetObjects()) {
+		reachEndTimes.push_back(dynamic_cast<Enemy*>(it)->reachEndTime);
+	}
+	// Can use Heap / Priority-Queue instead. But since we won't have too many enemies, sorting is fast enough.
+	std::sort(reachEndTimes.begin(), reachEndTimes.end());
+	float newDeathCountDown = -1;
+	int danger = lives;
+	for (auto& it : reachEndTimes) {
+		if (it <= DangerTime) {
+			danger--;
+			if (danger <= 0) {
+				// Death Countdown
+				float pos = DangerTime - it;
+				if (it > deathCountDown) {
+					// Restart Death Count Down BGM.
+					AudioHelper::StopSample(deathBGMInstance);
+					if (SpeedMult != 0)
+						deathBGMInstance = AudioHelper::PlaySample("astronomia.ogg", false, AudioHelper::BGMVolume, pos);
+				}
+				float alpha = pos / DangerTime;
+				alpha = std::max(0, std::min(255, static_cast<int>(alpha * alpha * 255)));
+				dangerIndicator->Tint = al_map_rgba(255, 255, 255, alpha);
+				newDeathCountDown = it;
+				break;
+			}
+		}
+	}
+	deathCountDown = newDeathCountDown;
+	if (SpeedMult == 0)
+		AudioHelper::StopSample(deathBGMInstance);
+	if (deathCountDown == -1 && lives > 0) {
+		AudioHelper::StopSample(deathBGMInstance);
+		dangerIndicator->Tint.a = 0;
+	}
+	if (SpeedMult == 0)
+		deathCountDown = -1;
 	for (int i = 0; i < SpeedMult; i++) {
 		IScene::Update(deltaTime);
 		// Check if we should create new enemy.
@@ -212,7 +269,9 @@ void PlayScene::OnKeyDown(int keyCode) {
 		if (keyCode == ALLEGRO_KEY_ENTER && keyStrokes.size() == code.size()) {
 			auto it = keyStrokes.begin();
 			for (int c : code) {
-				if (*it != c && (c == ALLEGRO_KEYMOD_SHIFT && *it != ALLEGRO_KEY_LSHIFT && *it != ALLEGRO_KEY_RSHIFT))
+				if (!((*it == c) ||
+					(c == ALLEGRO_KEYMOD_SHIFT &&
+					(*it == ALLEGRO_KEY_LSHIFT || *it == ALLEGRO_KEY_RSHIFT))))
 					return;
 				++it;
 			}
@@ -330,6 +389,12 @@ void PlayScene::ConstructUI() {
 	btn->SetOnClickCallback(std::bind(&PlayScene::UIBtnClicked, this, 2));
 	UIGroup->AddNewControlObject(btn);
 	// TODO 2 (3/8): Create a button to support constructing the 4th tower.
+	int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
+	int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
+	int shift = 135 + 25;
+	dangerIndicator = new Engine::Sprite("play/benjamin.png", w - shift, h - shift);
+	dangerIndicator->Tint.a = 0;
+	UIGroup->AddNewObject(dangerIndicator);
 }
 
 void PlayScene::UIBtnClicked(int id) {
@@ -365,8 +430,10 @@ bool PlayScene::CheckSpaceValid(int x, int y) {
 		Engine::Point pnt;
 		pnt.x = floor(it->Position.x / BlockSize);
 		pnt.y = floor(it->Position.y / BlockSize);
-		if (pnt.x < 0 || pnt.x >= MapWidth || pnt.y < 0 || pnt.y >= MapHeight)
-			continue;
+		if (pnt.x < 0) pnt.x = 0;
+		if (pnt.x >= MapWidth) pnt.x = MapWidth - 1;
+		if (pnt.y < 0) pnt.y = 0;
+		if (pnt.y >= MapHeight) pnt.y = MapHeight - 1;
 		if (map[pnt.y][pnt.x] == -1)
 			return false;
 	}
@@ -393,7 +460,6 @@ std::vector<std::vector<int>> PlayScene::CalculateBFSDistance() {
 		// TODO 3 (1/1): Implement a BFS starting from the most right-bottom block in the map.
 		//               For each step you should assign the corresponding distance to the most right-bottom block.
 		//               mapState[y][x] is TILE_DIRT if it is empty.
-		throw std::logic_error("CalculateBFSDistance is not implemented yet.");
 	}
 	return map;
 }

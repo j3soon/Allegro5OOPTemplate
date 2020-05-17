@@ -1,8 +1,8 @@
 #ifndef GAMEENGINE_HPP
 #define GAMEENGINE_HPP
 #include <allegro5/allegro.h>
-#include <unordered_map>
 #include <string>
+#include <unordered_map>
 
 #include "Point.hpp"
 
@@ -18,6 +18,10 @@ namespace Engine {
 	private:
 		// Allegro5 settings, frames per second, screen width, screen height, maximum simultaneous audio samples.
 		int fps{}, screenW{}, screenH{}, reserveSamples{};
+		// Determines whether to free memory between scenes.
+		bool freeMemoryOnSceneChanged{};
+		// Max delta time for update multiplier. If delta time exceeds this threshold, lag occurs.
+		float deltaTimeThreshold{};
 		// All scenes are stored in hash table for easy access.
 		// Reference: Data Structure - Hash table
 		std::unordered_map<std::string, IScene*> scenes;
@@ -91,9 +95,11 @@ namespace Engine {
 		/// <param name="reserveSamples">Maximum simultaneous audio samples.</param>
 		/// <param name="title">Window's title text.</param>
 		/// <param name="icon">Window's icon image path.</param>
-		void Start(const std::string& firstSceneName, int fps = 60, int screenW = 800, int screenH = 600, int reserveSamples = 10,
-				   const char* title = "Tower Defense (I2P(II)_2019 Mini Project 2))",
-				   const char* icon = "icon.png");
+		/// <param name="freeMemoryOnSceneChanged">Determines whether to free memory between scenes.</param>
+		void Start(const std::string& firstSceneName, int fps = 60, int screenW = 800, int screenH = 600, int reserveSamples = 1000,
+				   const char* title = "Tower Defense (I2P(II)_2020 Mini Project 2))",
+				   const char* icon = "icon.png", bool freeMemoryOnSceneChanged = false,
+				   float deltaTimeThreshold = 0.05);
 		/// <summary>
 		/// Add a new scene to the game. Should only be called once for each scene.
 		/// Use inline-new when adding scene in order to support polymorphism,

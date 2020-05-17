@@ -29,6 +29,8 @@ namespace Engine {
 		//if (!al_init_font_addon()) throw Allegro5Exception("failed to initialize font add-on");
 		if (!al_init_ttf_addon()) throw Allegro5Exception("failed to initialize ttf add-on");
 		if (!al_init_image_addon()) throw Allegro5Exception("failed to initialize image add-on");
+		// Enable antialias by linear interpolation.
+		al_set_new_bitmap_flags(ALLEGRO_MIN_LINEAR | ALLEGRO_MAG_LINEAR);
 		if (!al_install_audio()) throw Allegro5Exception("failed to initialize audio add-on");
 		if (!al_init_acodec_addon()) throw Allegro5Exception("failed to initialize audio codec add-on");
 		if (!al_reserve_samples(reserveSamples)) throw Allegro5Exception("failed to reserve samples");
@@ -44,12 +46,14 @@ namespace Engine {
 		// Set alpha blending mode.
 		al_set_blender(ALLEGRO_ADD, ALLEGRO_ALPHA, ALLEGRO_INVERSE_ALPHA);
 
+#ifndef __APPLE__
 		// Load and set window icon.
 		if (icon) {
 			static std::shared_ptr<ALLEGRO_BITMAP> iconReference = Resources::GetInstance().GetBitmap(icon);
 			al_set_display_icon(display, iconReference.get());
 			LOG(INFO) << "Loaded window icon from: " << icon;
 		}
+#endif
 
 		// Setup update timer.
 		update_timer = al_create_timer(1.0f / fps);
@@ -160,6 +164,9 @@ namespace Engine {
 			changeScene(nextScene);
 			nextScene = "";
 		}
+		// Force lag to avoid bullet-through-paper issue.
+		if (deltaTime >= deltaTimeThreshold)
+			deltaTime = deltaTimeThreshold;
 		activeScene->Update(deltaTime);
 	}
 	void GameEngine::draw() const {
@@ -182,13 +189,14 @@ namespace Engine {
 		activeScene->Terminate();
 		activeScene = scenes[name];
 		// Release unused resources.
-		Resources::GetInstance().ReleaseUnused();
+		if (freeMemoryOnSceneChanged)
+			Resources::GetInstance().ReleaseUnused();
 		// Initialize the new scene.
 		activeScene->Initialize();
 		LOG(INFO) << "Changed to " << name << " scene";
 	}
 	void GameEngine::Start(const std::string& firstSceneName, int fps, int screenW, int screenH,
-		int reserveSamples, const char* title, const char* icon) {
+		int reserveSamples, const char* title, const char* icon, bool freeMemoryOnSceneChanged, float deltaTimeThreshold) {
 		LOG(INFO) << "Game Initializing...";
 		// Update Allegro5 configs.
 		this->fps = fps;
@@ -197,6 +205,8 @@ namespace Engine {
 		this->reserveSamples = reserveSamples;
 		this->title = title;
 		this->icon = icon;
+		this->freeMemoryOnSceneChanged = freeMemoryOnSceneChanged;
+		this->deltaTimeThreshold = deltaTimeThreshold;
 		if (scenes.count(firstSceneName) == 0)
 			throw std::invalid_argument("The scene is not added yet.");
 		activeScene = scenes[firstSceneName];

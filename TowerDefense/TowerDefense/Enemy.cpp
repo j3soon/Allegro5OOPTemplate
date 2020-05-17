@@ -3,6 +3,7 @@
 #include <cmath>
 #include <random>
 #include <string>
+#include <vector>
 
 #include "AudioHelper.hpp"
 #include "Bullet.hpp"
@@ -12,6 +13,7 @@
 #include "GameEngine.hpp"
 #include "Group.hpp"
 #include "IScene.hpp"
+#include "LOG.hpp"
 #include "PlayScene.hpp"
 #include "Turret.hpp"
 
@@ -32,6 +34,7 @@ void Enemy::OnExplode() {
 Enemy::Enemy(std::string img, float x, float y, float radius, float speed, float hp, int money) :
 	Engine::Sprite(img, x, y), speed(speed), hp(hp), money(money) {
 	CollisionRadius = radius;
+	reachEndTime = 0;
 }
 void Enemy::Hit(float damage) {
 	hp -= damage;
@@ -50,12 +53,16 @@ void Enemy::Hit(float damage) {
 void Enemy::UpdatePath(const std::vector<std::vector<int>>& mapDistance) {
 	int x = static_cast<int>(floor(Position.x / PlayScene::BlockSize));
 	int y = static_cast<int>(floor(Position.y / PlayScene::BlockSize));
-	if (x < 0 || x >= PlayScene::MapWidth || y < 0 || y >= PlayScene::MapHeight) {
-		x = 0;
-		y = 0;
-	}
+	if (x < 0) x = 0;
+	if (x >= PlayScene::MapWidth) x = PlayScene::MapWidth - 1;
+	if (y < 0) y = 0;
+	if (y >= PlayScene::MapHeight) y = PlayScene::MapHeight - 1;
 	Engine::Point pos(x, y);
 	int num = mapDistance[y][x];
+	if (num == -1) {
+		num = 0;
+		Engine::LOG(Engine::ERROR) << "Enemy path finding error";
+	}
 	path = std::vector<Engine::Point>(num + 1);
 	while (num != 0) {
 		std::vector<Engine::Point> nextHops;
@@ -82,13 +89,19 @@ void Enemy::Update(float deltaTime) {
 	while (remainSpeed != 0) {
 		if (path.empty()) {
 			// Reach end point.
-			// Kill enemy and damage player.
 			Hit(hp);
 			getPlayScene()->Hit();
+			reachEndTime = 0;
 			return;
 		}
 		Engine::Point target = path.back() * PlayScene::BlockSize + Engine::Point(PlayScene::BlockSize / 2, PlayScene::BlockSize / 2);
 		Engine::Point vec = target - Position;
+		// Add up the distances:
+		// 1. to path.back()
+		// 2. path.back() to border
+		// 3. All intermediate block size
+		// 4. to end point
+		reachEndTime = (vec.Magnitude() + (path.size() - 1) * PlayScene::BlockSize - remainSpeed) / speed;
 		Engine::Point normalized = vec.Normalize();
 		if (remainSpeed - vec.Magnitude() > 0) {
 			Position = target;

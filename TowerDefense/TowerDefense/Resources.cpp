@@ -29,19 +29,26 @@ namespace Engine {
 		// changing between scenes.
 		for (auto it = bitmaps.begin(); it != bitmaps.end();) {
 			if (it->second.use_count() == 1) {
-				LOG(INFO) << "Destroyed Resource<image>";
+				LOG(INFO) << "Destroyed Resource<image>: " << it->first;
 				it = bitmaps.erase(it);
 			} else ++it;
 		}
 		for (auto it = fonts.begin(); it != fonts.end();) {
 			if (it->second.use_count() == 1) {
-				LOG(INFO) << "Destroyed Resource<font>";
+				LOG(INFO) << "Destroyed Resource<font>: " << it->first;
 				it = fonts.erase(it);
 			} else ++it;
 		}
+		for (auto it = sample_instance_pairs.begin(); it != sample_instance_pairs.end();) {
+			if (it->second.first.use_count() == 1) {
+				LOG(INFO) << "Destroyed<sample_instance>: " << it->first;
+				it = sample_instance_pairs.erase(it);
+			} else ++it;
+		}
+		// Stops playing samples whose instance isn't referenced.
 		for (auto it = samples.begin(); it != samples.end();) {
 			if (it->second.use_count() == 1) {
-				LOG(INFO) << "Destroyed Resource<audio>";
+				LOG(INFO) << "Destroyed Resource<audio>: " << it->first;
 				it = samples.erase(it);
 			} else ++it;
 		}
@@ -102,6 +109,17 @@ namespace Engine {
 		LOG(INFO) << "Loaded Resource<audio>: " << samplePath;
 		samples[name] = std::shared_ptr<ALLEGRO_SAMPLE>(sample, al_destroy_sample);
 		return samples[name];
+	}
+	std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> Resources::GetSampleInstance(std::string name) {
+		std::shared_ptr<ALLEGRO_SAMPLE> sample = GetSample(name);
+		ALLEGRO_SAMPLE_INSTANCE* sample_instance = al_create_sample_instance(sample.get());
+		std::string samplePath = samplePathPrefix + name;
+		if (!sample_instance)
+			throw Allegro5Exception(("failed to create sample instance: " + samplePath).c_str());
+		LOG(INFO) << "Created<sample_instance>: " << samplePath;
+		std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> ptr = std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE>(sample_instance, al_destroy_sample_instance);
+		sample_instance_pairs[name] = std::make_pair(ptr, sample);
+		return ptr;
 	}
 	Resources& Resources::GetInstance() {
 		// The classic way to lazy initialize a Singleton.
