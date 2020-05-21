@@ -398,8 +398,10 @@ void PlayScene::ConstructUI() {
 }
 
 void PlayScene::UIBtnClicked(int id) {
-	if (preview)
+	if (preview) {
 		UIGroup->RemoveObject(preview->GetObjectIterator());
+        preview = nullptr;
+    }
 	if (id == 0 && money >= MachineGunTurret::Price)
 		preview = new MachineGunTurret(0, 0);
 	else if (id == 1 && money >= LaserTurret::Price)
