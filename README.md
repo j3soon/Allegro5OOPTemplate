@@ -1,14 +1,8 @@
 # Allegro 5 Template for I2P(2)_2020_SR
 
-We will use Allegro 5 OOP in mini-project 2 and final project.
+We will use Allegro 5 OOP in mini-project 2.
 
 ![](docs/imgs/preview.png)
-
-## Administrative
-
-[iLMS Course Site](https://lms.nthu.edu.tw/course/38000)
-
-[Allegro 5 Template for I2P(1)_2019_SR](https://github.com/j3soon/Allegro5Template/blob/master/README.md)
 
 ## Installation
 
@@ -113,7 +107,7 @@ Follow the steps [here](https://github.com/j3soon/Allegro5Template/blob/master/d
   ```
   Assertion failed!
 
-  Program: <PATH>\final.exe
+  Program: <PATH>\program.exe
   File: <PATH>/bitmap_draw.c, Line 140
 
   Expression: bitmap
