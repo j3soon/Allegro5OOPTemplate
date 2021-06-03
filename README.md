@@ -151,6 +151,12 @@ Follow the steps [here](https://github.com/j3soon/Allegro5Template/blob/master/d
 
     ![](docs/imgs/platform-toolset.png)
 
+  - If the compilation failed in Visual Studio, and you received the error message: `Warning MSB8003 The WindowsSDKDir property is not defined. Some build tools may not be found.`, you may forgot to install Windows SDK:
+
+    ![](docs/imgs/windows-sdk-install.png)
+
+    You may want to install the newest version. (or any version you want)
+
 - Cannot compile on Code::Blocks.
 
   For Code::Blocks you should create a project following the tutorial above, and set the project settings to allow C++11.
